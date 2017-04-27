@@ -1,0 +1,20 @@
+<html>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js">
+</script>
+<body>
+<script>
+var data = "";
+$('body').keypress(function(e){
+	if(String.fromCharCode( e.which ).trim() != ""){
+		data = data+String.fromCharCode( e.which );
+		  document.body.style.backgroundColor=data;
+	}else{
+	data = "";
+}
+	
+});
+
+</script>
+</body>
+</html>
