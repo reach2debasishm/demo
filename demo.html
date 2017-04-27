@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+ <title>Nested document.write()</title>
+</head>
+<body>
+<script>
+ (function(s) {
+ 
+
+
+    var aStr, scriptEle = document.createElement('script');
+    aStr = s.replace(/["']/g, '"');
+    aStr = aStr.replace(/"<script>document.write/g, "");
+    aStr = aStr.replace(/;<\/script\>"/g, "");
+    scriptEle.innerHTML = aStr;
+    document.body.appendChild(scriptEle);
+
+
+
+ })("document.write('<script>document.write(\"<script>document.write('<script>document.write(\"Hello World\");<\/script>');<\/script>\");<\/script>')");
+</script>
+</body>
+</html>
